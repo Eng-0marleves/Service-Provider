@@ -1,0 +1,652 @@
+/* ==========================
+Globale Section Start
+========================== */
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    transition: .2s linear;
+    text-transform: capitalize;
+}
+:root {
+    --blue: #007bff;
+    --indigo: #0f0a16;
+    --purple: navy;
+    --pink: #e83e8c;
+    --red:  crimson;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --light: #ddd;
+    --light-dark: #ccc;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --dark1: #000;
+    --dark2: #333;
+    --dark3: #666;
+    --fanta-black: #000100;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --snow: #22ced1;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --dark: #343a40;
+    --hot: #ff3764;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+section:not(.header) {
+    padding: 0 7%;
+    padding-top: 7.5rem;
+    padding-bottom: 3rem;
+    min-height: 100vh;
+}
+.btn {
+    display: inline-block;
+    padding: .8rem 2.5rem;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--danger);
+    margin-top: 1rem;
+    border: .2rem solid var(--danger);
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    background: var(--white);
+}
+.btn span{
+    position: relative;
+    z-index: 2;
+}  
+.btn:after{
+    position: absolute;
+    content: "";
+    top: 0; left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--danger);
+    transition: all .35s;
+}
+.btn:hover{
+    color: var(--white);
+}
+.btn:hover:after{
+    width: 100%;
+}
+.feature .btn,
+.service .btn {
+    color: var(--blue);
+    border-color: var(--blue);
+}
+.feature .btn::after,
+.service .btn::after {
+    background: var(--blue);
+}
+.feature .btn:hover,
+.service .btn:hover {
+    color: var(--white);
+}
+.price .btn,
+.contact .btn {
+    color: var(--teal);
+    border-color: var(--teal);
+}
+.price .btn::after,
+.contact .btn::after {
+    background: var(--teal);
+}
+.price .btn:hover,
+.contact .btn:hover {
+    color: var(--white);
+}
+.contact .btn:hover {
+    background: var(--teal);
+    cursor: pointer;
+}
+.heading {
+    text-align: center;
+    color: var(--fanta-black);
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+}
+/* ==========================
+Globale Section End
+========================== */
+/* ==========================
+Header Section Start
+========================== */
+.header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 7%;
+    background: transparent;
+    z-index: 100;
+}
+.header .logo {
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: bolder;
+}
+.header .navbar.nav-toggle {
+    display: block;
+}
+.header .navbar a {
+    font-size: 2rem;
+    margin-left: 2.5rem;
+    color: var(--white);
+}
+.header .navbar a:hover {
+    color: var(--light);
+}
+.header.sticky {
+    background: var(--white);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.header.sticky .navbar a {
+    color: var(--gray-dark);
+}
+.header.sticky .logo {
+    color: var(--hot);
+}
+.header.sticky .navbar a:hover {
+    color: var(--hot);
+}
+#menue {
+    font-size: 3rem;
+    color: var(--gray);
+    cursor: pointer;
+    display: none;
+}
+#menue:hover {
+    color: var(--hot);
+}
+/* ==========================
+Header Section End
+========================== */
+/* ==========================
+Home Section Start
+========================== */
+.home {
+    display: flex;
+    align-items: center;
+    background-image: url("https://img.freepik.com/free-photo/abstract-background-with-red-lines_1361-3531.jpg?size=626&ext=jpg&ga=GA1.1.360836213.1631007583");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-wrap: wrap;
+}
+.home .image {
+    flex: 1 1 40rem; 
+}
+.home .content {
+    padding-top: 1rem;
+    flex: 1 1 40rem; 
+}
+.home .content h3 {
+    color: var(--white);
+    font-size: 5.5rem;
+    text-transform: uppercase;
+}
+.home .content p {
+    color: var(--white);
+    font-size: 1.7rem;
+}
+.home img {
+    width: 100%;
+}
+/* ==========================
+Home Section End
+========================== */
+/* ==========================
+feature Section Start
+========================== */
+.feature .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.feature .box-container .box {
+    margin: 1rem;
+    text-align: center;
+    padding: 2rem 4rem;
+    border: .1rem solid rgba(0,0,0,.2);
+    flex: 1 1 30rem;
+}
+.feature .box-container .box img {
+    width: 25rem;
+    height: 20rem;
+}
+.feature .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--fanta-black);
+    padding: 1rem 0;
+}
+.feature .box-container .box p {
+    font-size: 1.3rem;
+    color: var(--dark3);
+    padding-bottom: 1rem;
+}
+/* ==========================
+feature Section End
+========================== */
+/* ==========================
+service Section Start
+========================== */
+.service {
+    background: var(--purple);
+    color: var(--white);
+}
+.service .heading {
+    color: var(--white);
+}
+.service .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.service .box-container .box {
+    padding: 4rem;
+    margin: 1rem;
+    flex: 1 1 30rem;
+    border: .1rem solid var(--dark3);
+    text-align: center;
+}
+.service .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+.service .box-container .box p {
+    font-size: 1.5rem;
+    color: var(--white);
+    padding-top: 1rem;
+}
+.service .box-container .box:hover {
+    background: var(--white);
+}
+.service .box-container .box:hover h3 {
+    color: var(--dark1);
+}
+.service .box-container .box:hover p {
+    color: var(--dark1);
+}
+/* ==========================
+service Section End
+========================== */
+/* ==========================
+project Section Start
+========================== */
+.project .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.project .box-container .box {
+    margin: 1rem;
+    border: .1rem solid rgba(0,0,0,.2);
+    overflow: hidden;
+    height: 25rem;
+    flex: 1 1 30rem;
+    position: relative;
+    cursor: pointer;
+}
+.project .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.project .box-container .box .number {
+    position: absolute;
+    top: .2rem; right: 1.5rem;
+    font-size: 5rem;
+    color: rgba(255, 253, 253 ,.5);
+    font-weight: bolder;
+    z-index: 10;
+}
+.project .box-container .box::before {
+    content: " ";
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--hot);
+    transition: .3s ease-out;
+    clip-path: circle(30% at 90% 0);
+}
+.project .box-container .box:hover:before {
+    clip-path: circle(100%);
+}
+.project .box-container .box .info {
+    position: absolute;
+    top: 70%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+}
+.project .box-container .box:hover .info {
+    transition-delay: .2s;
+    opacity: 1;
+    top: 50%;
+}
+.project .box-container .box .info h3 {
+    color: var(--white);
+    font-size: 2.5rem;
+}
+.project .box-container .box .info p {
+    color: var(--light-dark);
+    font-size: 2rem;
+}
+/* ==========================
+project Section End
+========================== */
+/* ==========================
+team Section Start
+========================== */
+.team {
+    background: var(--red);
+}
+.team .heading {
+    color: var(--white);
+}
+.team .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.team .box-container .box {
+    width: 25rem;
+    background: var(--white);
+    position: relative;
+    margin: 1rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+}
+.team .box-container .box img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.team .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--fanta-black);
+}
+.team .box-container .box span {
+    font-size: 1.5rem;
+    color: var(--danger);
+}
+.team .box-container .box p {
+    padding: 1rem 2.5rem;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    color: var(--dark3);
+}
+.team .box-container .box .share {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    background: var(--hot);
+    display: flex;
+    justify-content: center;
+}
+.team .box-container .box .share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    color: var(--white);
+    font-size: 1.7rem;
+}
+.team .box-container .box .share a:hover {
+    background: var(--white);
+    color: var(--danger);
+}
+/* ==========================
+team Section End
+========================== */
+/* ==========================
+price Section Start
+========================== */
+.price .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.price .box-container .box {
+    flex: 1 1 25rem;
+    margin: 1rem;
+    text-align: center;
+    padding: 4rem;
+    border: .3rem solid var(--teal);
+    border-radius: 1rem;
+}
+.price .box-container .box:hover {
+    box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.7);
+}
+.price .box-container .box img {
+    width: 25rem;
+    height: 20rem;
+}
+.price .box-container .box h3 {
+    font-size: 3rem;
+    color: var(--fanta-black);
+    padding-top: 1rem;
+}
+.price .box-container .box .amount {
+    display: flex;
+    justify-content: center;
+    font-size: 6rem;
+    color: var(--teal);
+}
+.price .box-container .box .amount span {
+    font-size: 2.5rem;
+}
+.price .box-container .box p {
+    color: var(--dark3);
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+/* ==========================
+price Section End
+========================== */
+/* ==========================
+contact Section Start
+========================== */
+.contact {
+    background: var(--teal);
+}
+.contact .btn {
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
+}
+.contact .heading {
+    color: var(--white);
+}
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact .row form {
+    flex: 1 1 40rem;
+    padding: 2rem;
+}
+.contact .row .map {
+    flex: 1 1 40rem;
+    width: 100%;
+}
+.contact .row form .iputbx {
+    position: relative;
+    margin: 1.5rem;
+}
+.contact .row form .iputbx textarea,
+.contact .row form .iputbx input {
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: .7rem 1rem;
+    font-size: 1.7rem;
+    color: var(--dark3);
+    border: .5rem solid var(--teal);
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
+    text-transform: none;
+}
+.contact .row form .iputbx textarea {
+    height: 15rem;
+    resize: none;
+}
+.contact .row form .iputbx label {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 2.9rem; left: 1rem;
+    color: var(--dark2);
+}
+.contact .row form .iputbx textarea:focus ~ label,
+.contact .row form .iputbx input:focus ~ label,
+.contact .row form .iputbx textarea:valid ~ label,
+.contact .row form .iputbx input:valid ~ label {
+    top: -.7rem; left: 0;
+    color: var(--white);
+}
+/* ==========================
+contact Section End
+========================== */
+/* ==========================
+footer Section Start
+========================== */
+footer {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark3);
+    font-weight: bolder;
+}
+footer span {
+    color: var(--hot);
+}
+/* ==========================
+footer Section End
+========================== */
+/* ==========================
+@media Section Start
+========================== */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+} 
+@media (max-width: 991px) {
+    section:not(.header) {
+        padding: 0 7%;
+        padding-top: 7.5rem;
+        padding-bottom: 3rem;
+        min-height: 100vh;
+}
+}
+@media (max-width: 768px) {
+    #menue {
+        display: block;
+    }
+        .header .navbar {
+            position: absolute;
+            top: 100%; left: 0;
+            width: 100%;
+            background: var(--light);
+            height: calc(100vh - 100%);
+            border-top: .1rem solid rgba(0,0,0,.2);
+            display: none;
+        }   
+    .header .navbar a {
+        margin: 1rem;
+        display: block;
+        padding: 1.3rem 0;
+        background: var(--white);
+        text-align: center;
+        border: .1rem solid var(--hot);
+        animation: nav-links .5s linear backwards;
+        animation-delay: calc(.2s * var(--i));
+        color: var(--hot);
+    }
+    @keyframes nav-links {
+        0% {
+            transform: translateY(-50rem);
+            opacity: 0;
+        }
+    }
+    .home .content {
+        text-align: center;
+    }
+    .home img {
+        display: none;
+    }
+    .home .content h3 {
+        font-size: 4rem;
+    }
+}
+    @media (min-width: 768px) {
+        .continar{
+            width: 750px;
+        }
+
+        .header .continar .text h1{
+            font-size: 28px;
+        }
+        .header .continar .text p{
+            font-size: 18px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .continar{
+            width: 970px;
+        }
+
+        
+        .header .continar .text{
+            text-align: center;
+        }
+        .header .continar .text p{
+            margin: 10px auto;
+        }
+        .header .continar .text h1{
+            font-size: 40px;
+            margin: 0;
+            letter-spacing: -2px;
+        }
+    }
+    
+    @media (max-width: 1200px) {
+        .continar{
+            width: 1170px;
+        }
+    }
+    @media (max-width: 1200px) {
+        html {
+            font-size: 50%;
+        }
+    } 
+/* ==========================
+@media Section End
+========================== */
